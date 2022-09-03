@@ -1,3 +1,7 @@
+const buttons = document.querySelector('.buttons');
+// Nodelist of buttons
+const eachButton = buttons.querySelectorAll('.button');
+
 function numValidate(a, b) {
   if (typeof a === 'number' && typeof b === 'number') return true;
   return false;
@@ -32,5 +36,22 @@ function operate(func, num1, num2) {
 }
 
 // Create the functions that populate the display when you click the number buttons.
-function renderDisplay() {}
+function renderDisplay(entry) {
+  storeValue(entry);
+  const display = document.querySelector('.display');
+  display.textContent = entry;
+}
+
 // You should be storing the ‘display value’ in a variable somewhere for use in the next step.
+function storeValue(num) {
+  const storedNum = [];
+  storedNum.push(num);
+  console.log(storedNum);
+}
+
+// Event listeners
+eachButton.forEach(button =>
+  button.addEventListener('click', e => {
+    return renderDisplay(e.target.value);
+  }),
+);
