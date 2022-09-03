@@ -37,16 +37,16 @@ function operate(func, num1, num2) {
 
 // Create the functions that populate the display when you click the number buttons.
 function renderDisplay(entry) {
-  storeValue(entry);
+  const num = storeValue(entry);
   const display = document.querySelector('.display');
-  display.textContent = entry;
+  display.textContent = num;
 }
 
 // You should be storing the ‘display value’ in a variable somewhere for use in the next step.
 function storeValue(num) {
   const storedNum = [];
   storedNum.push(num);
-  console.log(storedNum);
+  return storedNum;
 }
 
 // Event listeners
