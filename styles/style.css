@@ -37,6 +37,7 @@ html {
   display: flex;
   justify-content: flex-end;
   text-transform: uppercase;
+  height: 5em;
   margin-right: 1em;
   flex: 1;
 }
