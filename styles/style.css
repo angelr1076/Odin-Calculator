@@ -22,12 +22,17 @@ html {
   height: 100vh;
 }
 
+.case {
+  border: 2px solid #000;
+  padding: 6em 4em;
+  border-radius: 5px;
+}
+
 .calculator {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
+  /* max-width: 400px; */
   gap: 0.5em;
-  /* flex: 1; */
   font-size: 5rem;
   border: 1px solid #000;
 }
@@ -36,14 +41,16 @@ html {
 .display {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
   text-transform: uppercase;
-  height: 5em;
-  margin-right: 1em;
-  flex: 1;
+  /* background-color: gray; */
+  font-size: 4rem;
+  margin-right: 0.5em;
+  flex: 0 1 0;
 }
 
-.buttons {
-
+.buttons > div {
+  margin: .1em;
 }
 
 .row {

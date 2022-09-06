@@ -1,6 +1,7 @@
 const buttons = document.querySelector('.buttons');
 // Nodelist of buttons
 const eachButton = buttons.querySelectorAll('.button');
+const stack = [];
 
 function numValidate(a, b) {
   if (typeof a === 'number' && typeof b === 'number') return true;
@@ -28,9 +29,11 @@ function divide(a, b) {
 }
 
 // Create a new function operate that takes an operator and 2 numbers and then calls one of the above functions on the numbers.
-function operate(func, num1, num2) {
-  if (num1 && num2 && typeof num1 === 'number' && typeof num2 === 'number') {
-    return func(num1, num2);
+function operate(operator, num1, num2) {
+  num1 = Number(num1);
+  num2 = Number(num2);
+  if (num1 && num2) {
+    return operator(num1, num2);
   }
   return;
 }
@@ -43,15 +46,15 @@ function renderDisplay(entry) {
 }
 
 // You should be storing the ‘display value’ in a variable somewhere for use in the next step.
-function storeValue(num) {
-  const storedNum = [];
-  storedNum.push(num);
-  return storedNum;
+function storeValue(str) {
+  for (let i = 0; i < str.length; i++) {
+    stack.push(str[i]);
+  }
+  console.log(stack);
+  return stack;
 }
 
 // Event listeners
 eachButton.forEach(button =>
-  button.addEventListener('click', e => {
-    return renderDisplay(e.target.value);
-  }),
+  button.addEventListener('click', e => renderDisplay(e.target.value)),
 );
