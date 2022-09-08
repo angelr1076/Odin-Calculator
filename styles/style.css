@@ -1,69 +1,135 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto+Mono&display=swap');
+
 :root {
   --orbitron: 'Orbitron', sans-serif;
   --roboto-mono: 'Roboto Mono', monospace;
+  --black: #000;
+  --lightgray: lightgray;
+  --white: #fff;
+  --aqua: aquamarine;
+  --teal: teal;
+  --blueish: rgb(14, 176, 176);
+  --corn: cornsilk;
+  --pinkish: #9e3287;
+  --purplish: #8e2de2;
 }
 
 * {
   margin: 0;
-  padding: 0; 
+  padding: 0;
 }
 
 html {
+  height: 100%;
   font-family: var(--orbitron);
   font-size: 10px;
 }
 
+body {
+  /* Kudos to UI designer and illustrator Steve Schoger from heropatterns.com for the svg */
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 0h2v20H9V0zm25.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm-20 20l1.732 1-10 17.32-1.732-1 10-17.32zM58.16 4.134l1 1.732-17.32 10-1-1.732 17.32-10zm-40 40l1 1.732-17.32 10-1-1.732 17.32-10zM80 9v2H60V9h20zM20 69v2H0v-2h20zm79.32-55l-1 1.732-17.32-10L82 4l17.32 10zm-80 80l-1 1.732-17.32-10L2 84l17.32 10zm96.546-75.84l-1.732 1-10-17.32 1.732-1 10 17.32zm-100 100l-1.732 1-10-17.32 1.732-1 10 17.32zM38.16 24.134l1 1.732-17.32 10-1-1.732 17.32-10zM60 29v2H40v-2h20zm19.32 5l-1 1.732-17.32-10L62 24l17.32 10zm16.546 4.16l-1.732 1-10-17.32 1.732-1 10 17.32zM111 40h-2V20h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zM40 49v2H20v-2h20zm19.32 5l-1 1.732-17.32-10L42 44l17.32 10zm16.546 4.16l-1.732 1-10-17.32 1.732-1 10 17.32zM91 60h-2V40h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm24.026 3.294l1 1.732-17.32 10-1-1.732 17.32-10zM39.32 74l-1 1.732-17.32-10L22 64l17.32 10zm16.546 4.16l-1.732 1-10-17.32 1.732-1 10 17.32zM71 80h-2V60h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm24.026 3.294l1 1.732-17.32 10-1-1.732 17.32-10zM120 89v2h-20v-2h20zm-84.134 9.16l-1.732 1-10-17.32 1.732-1 10 17.32zM51 100h-2V80h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm24.026 3.294l1 1.732-17.32 10-1-1.732 17.32-10zM100 109v2H80v-2h20zm19.32 5l-1 1.732-17.32-10 1-1.732 17.32 10zM31 120h-2v-20h2v20z' fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E"),
+    linear-gradient(to right, var(--pinkish), var(--purplish), var(--teal));
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* flex: 1; */
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .case {
-  border: 2px solid #000;
   padding: 6em 4em;
   border-radius: 5px;
+  background-color: var(--blueish);
+  border: 1px solid var(--black);
 }
 
 .calculator {
   display: flex;
   flex-direction: column;
-  /* max-width: 400px; */
-  gap: 0.5em;
   font-size: 5rem;
-  border: 1px solid #000;
 }
 
 
 .display {
   display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  text-transform: uppercase;
-  min-height: 1.5em;
-  font-size: 4rem;
-  margin: 0.5em 0.5em 0 0;
-  flex: 0 1 0;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  min-height: 2em;
+  max-height: 2em;
+  font-size: 3rem;
+  background-color: var(--lightgray);
+  padding: 1em;
+  flex: 1;
 }
 
-.buttons > div {
-  margin: .1em;
+.previous {
+  order: 1;
 }
+
+.current {
+  order: 2;
+}
+
 
 .row {
   display: flex;
   gap: .1em;
 }
 
+.clear {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: .1em;
+}
+
+.buttons {
+  background-color: var(--corn);
+}
+
+.buttons>div {
+  margin: .1em;
+}
+
 .button {
   font-family: var(--roboto-mono);
-  font-size: 6rem;
+  text-transform: uppercase;
+  color: var(--white);
+  cursor: pointer;
+  font-size: 5rem;
+  flex: 1;
   width: 1.5em;
 }
 
-.clear {
-  justify-content: flex-end;
+.button:hover {
+  opacity: .75;
+}
+
+.all-clear {
+  background-color: rgb(221, 160, 221);
+}
+
+.delete {
+  background-color: rgb(238, 130, 238);
+}
+
+.number {
+  background-color: rgb(147, 112, 219);
+}
+
+.operator {
+  background-color: rgb(153, 50, 204);
+}
+
+.equal {
+  background-color: rgb(255, 0, 255);
+}
+
+.decimal {
+  background-color: rgb(138, 43, 226);
 }

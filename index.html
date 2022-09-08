@@ -14,42 +14,41 @@
       <div class="calculator">
         <div class="display">
           <!-- Calculator screen -->
+          <div data-previous class="previous"></div>
+          <div data-current class="current"></div>
         </div>
         <div class="buttons">
-          <div class="row clear">
-            <button class="button hidden" type="button"></button>
-            <button class="button hidden" type="button"></button>
-            <button class="button hidden" type="button"></button>
-            <button class="button clear-button" type="button">c</button>
+          <div class="clear">
+            <button data-all-clear class="all-clear button" type="button">ac</button>
+            <button data-delete class="delete button">del</button>
           </div>
           <div class="row">
-            <button class="button" type="button" value="7">7</button>
-            <button class="button" type="button" value="8">8</button>
-            <button class="button" type="button" value="9">9</button>
-            <button class="button" type="button" value="/">&#247;</button>
+            <button data-number class="number button" type="button" value="7">7</button>
+            <button data-number class="number button" type="button" value="8">8</button>
+            <button data-number class="number button" type="button" value="9">9</button>
+            <button data-operator class="operator button" type="button" value="/">÷</button>
           </div>
           <div class="row">
-            <button class="button" type="button" value="4">4</button>
-            <button class="button" type="button" value="5">5</button>
-            <button class="button" type="button" value="6">6</button>
-            <button class="button" type="button" value="*">x</button>
+            <button data-number class="number button" type="button" value="4">4</button>
+            <button data-number class="number button" type="button" value="5">5</button>
+            <button data-number class="number button" type="button" value="6">6</button>
+            <button data-operator class="operator button" type="button" value="x">x</button>
           </div>
           <div class="row">
-            <button class="button" type="button" value="1">1</button>
-            <button class="button" type="button" value="2">2</button>
-            <button class="button" type="button" value="3">3</button>
-            <button class="button" type="button" value="-">-</button>
+            <button data-number class="number button" type="button" value="1">1</button>
+            <button data-number class="number button" type="button" value="2">2</button>
+            <button data-number class="number button" type="button" value="3">3</button>
+            <button data-operator class="operator button" type="button" value="-">-</button>
           </div>
           <div class="row">
-            <button class="button" type="button" value=".">.</button>
-            <button class="button" type="button" value="0">0</button>
-            <button class="button" type="button" value="=">=</button>
-            <button class="button" type="button" value="+">+</button>
+            <button data-decimal class="decimal button" type="button" value=".">.</button>
+            <button data-number class="number button" type="button" value="0">0</button>
+            <button data-equal class="equal button" type="button" value="=">=</button>
+            <button data-operator class="operator button" type="button" value="+">+</button>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
 </body>
 </html>
