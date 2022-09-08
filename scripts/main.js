@@ -21,7 +21,7 @@ function operate() {
       break;
     case '÷':
       if (currentNum <= 0) {
-        previousNum = 'Error';
+        previousNum = `Error!`;
         renderDisplay();
         break;
       }
