@@ -1,5 +1,8 @@
 # Odin-Calculator
 
+![Calc screenshot](https://res.cloudinary.com/angelrodriguez/image/upload/v1666207556/Odin%20Calculator/Screen_Shot_2022-10-19_at_3.25.34_PM.png
+ "Odin Calculator")
+
 ## Assignment
 
 Don’t forget to commit early & often! You can reference the Commit Message lesson here!
