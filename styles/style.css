@@ -14,13 +14,17 @@
   --purplish: #8e2de2;
 }
 
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
 }
+/* From https: //heropatterns.com/ */
+body {
+  background-color: #DFDBE5;
+  background-image: url("../assets/topography.svg");
+}
 
 html {
-  height: 100%;
   font-family: var(--orbitron);
   font-size: 10px;
 }
@@ -30,7 +34,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 95vh;
 }
 
 .case {
@@ -67,7 +71,6 @@ html {
 .current {
   order: 2;
 }
-
 
 .row {
   display: flex;
@@ -125,4 +128,18 @@ html {
 
 .decimal {
   background-color: rgb(138, 43, 226);
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+  min-height: 5vh;
+}
+
+.footer-content {
+  font-size: 1.8em;
+  color: #fff;
+  text-shadow: 1px 1px 2px black;
+  font-family: var(--roboto-mono);
 }
